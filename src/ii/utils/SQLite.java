@@ -9,14 +9,18 @@ public class SQLite {
 	public static Connection connection;
 	public SQLite(){
 		try {
-			try {
-				Class.forName("org.sqlite.JDBC");
-			} catch (ClassNotFoundException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-			connection = DriverManager.getConnection("jdbc:sqlite:data/database.db");
+			Class.forName("com.mysql.jdbc.Driver").newInstance();
+			connection = DriverManager.getConnection("jdbc:mysql://localhost/intelligence","root","tango255");
 		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (InstantiationException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IllegalAccessException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}

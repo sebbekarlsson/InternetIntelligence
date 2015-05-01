@@ -9,5 +9,6 @@
 	<classpathentry kind="lib" path="/Users/sebastiankarlsson/Desktop/Api&apos;s and libraries/commons-io-2.4/commons-io-2.4-tests.jar"/>
 	<classpathentry kind="lib" path="/Users/sebastiankarlsson/Desktop/Api&apos;s and libraries/commons-io-2.4/commons-io-2.4.jar"/>
 	<classpathentry kind="lib" path="/Users/sebastiankarlsson/Desktop/Api&apos;s and libraries/sqlite-jdbc-3.8.7.jar"/>
+	<classpathentry kind="lib" path="/Users/sebastiankarlsson/Desktop/Api&apos;s and libraries/java sql connector/mysql-connector-java-5.1.34-bin.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
