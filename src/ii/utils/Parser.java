@@ -3,6 +3,8 @@ package ii.utils;
 import ii.main.Main;
 
 import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.util.Arrays;
 
 import org.apache.commons.io.FilenameUtils;
@@ -13,6 +15,7 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 public class Parser {
+
 
 	public static String[] extensions = new String[]{
 		"css",
@@ -66,85 +69,118 @@ public class Parser {
 
 
 	public static void parse(String url){
+		System.out.println("PARSING: "+url);
 		new Thread(new Runnable(){
 			@Override
 			public void run(){
+				try {
+					Thread.sleep(60);
+				} catch (InterruptedException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
 				Document doc = null;
-				Connection con = Jsoup.connect(url);
-				con.timeout(10000);
+				Connection con = Jsoup.connect(url)
+						//.userAgent("Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/535.21 (KHTML, like Gecko) Chrome/19.0.1042.0 Safari/535.21")
+						.timeout(30000);
+
+
 
 				try {
-					doc = con.get();
-				} catch (IOException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-
-				Elements link_elements = doc.select("[href], [src]");
-				Elements paragraph_elements = doc.select("p");
-
-				for (Element element : link_elements) {
-					String href = "";
-
-					if(element.absUrl("href").isEmpty()){
-						href = element.absUrl("src");
-					}else{
-						href = element.absUrl("href");
-					}
-
-					if(href.equals("")){
+					if(con.execute().statusCode() != 200){
+						System.err.println("Could not reach "+url);
 						return;
 					}
+					doc = con.get();
+				} catch (IOException e) {
+					return;
+				}
+				
 
-					if(isParsable(href)){
-						Main.URLS.add(href);
+				
+				Elements elements = doc.select("[href], [src]");
+				for (Element element : elements) {
+					String link = element.attr("abs:href");
+					if(link.isEmpty() || link.equals("") || link.equals(" ")){
+						link = element.attr("abs:src");
+					}
+
+					if(!(link.startsWith("http") || link.startsWith("https"))){
+						link = "http://www."+getDomainName(url)+link;
+					}
+
+					String extension = FilenameUtils.getExtension(FilenameUtils.getName(link));
+					if(link.equals("")){
+						return;
+					}
+					if(extension.equals("jpg") || extension.equals("gif") || extension.equals("jpeg") || extension.equals("png")){
+						//is not parsable
 					}else{
-						Main.DOWNLOADS.add(href);
+						Main.URLS.add(link);
 					}
 
-
-
 				}
-
+				
+				Elements paragraph_elements = doc.select("p");
 				for(Element element : paragraph_elements){
-					String text = element.text();
-					String[] words = text.split(" ");
+				String text = element.text().replaceAll("['|(|)|{|}|´|\"]", "").toLowerCase();
+				String[] words = text.split(" ");
+				
+				for(int i = 0; i < words.length; i++){
+					String word = words[i];
+					String word_type = "word";
+					String prev_word = words[Math.max(i-1, 0)];
+					String next_word = words[Math.min(words.length-1, i+1)];
 
-					for(int i = 0; i < words.length; i++){
-						String word = words[i]
-								.replace("'", "")
-								.replace("?", "")
-								.replace("(", "")
-								.replace(")", "")
-								.replace(".", "")
-								.replace(",", "");
-						String word_type = "word";
-						String prev_word = words[Math.max(i-1, 0)];
-						String next_word = words[Math.min(words.length-1, i+1)];
-
-						if(next_word.equals("is") || next_word.equals("are") || next_word.equals("will") || next_word.equals("can")){
-							word_type = "object";
-						}
-						else if(prev_word.equals("is")){
-							word_type = "describing";
-						}
-
-						Main.sqlite.query("REPLACE INTO words (wordName, wordType) VALUES('"+word+"', '"+word_type+"')");
+					if(
+							next_word.equals("is") ||
+							next_word.equals("are") ||
+							next_word.equals("will") ||
+							next_word.equals("can") ||
+							prev_word.equals("the")
+					){
+						word_type = "object";
 					}
+					else if(prev_word.equals("is")){
+						word_type = "describing";
+						
+					}
+					
+					
+					
+	
+					
+					Main.sqlite.query("REPLACE INTO words (wordName, wordType) VALUES('"+word+"', '"+word_type+"')");
 				}
+				
+				Main.sqlite.query("REPLACE INTO paragraphs (paragraphText) VALUES('"+text+"')");
+			}
+
 				Main.URLS.remove(url);
+				Main.VISITED_URLS.add(url);
+
 			}
 		}).start();
-
 	}
 
-	private static boolean isParsable(String url){
-		boolean parsable = true;
-		String extension = FilenameUtils.getExtension(url);
-		if(Arrays.asList(extensions).contains(extension) || extension.contains("?")){
-			parsable = false;
+
+
+	public static String getDomainName(String url){
+		URI uri;
+		String domain = "";
+		try {
+			uri = new URI(url);
+			domain = uri.getHost();
+			return domain.startsWith("www.") ? domain.substring(4) : domain;
+		} catch (URISyntaxException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
+		
+		return domain;
 
-		return parsable;
 	}
+
+
+	
 }
