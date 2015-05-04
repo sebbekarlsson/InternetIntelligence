@@ -36,6 +36,8 @@ public class Parser {
 		"flv",
 		"webm",
 		"avi",
+		"mpeg4",
+		"mpeg",
 		"wmv",
 		"java",
 		"jar",
@@ -106,22 +108,22 @@ public class Parser {
 					}
 
 					if(!(link.startsWith("http") || link.startsWith("https"))){
-						link = "http://www."+getDomainName(url)+link;
+						link = "http://www."+DomainUtils.getDomainName(url)+link;
 					}
 
 					String extension = FilenameUtils.getExtension(FilenameUtils.getName(link));
 					if(link.equals("")){
 						return;
 					}
-					if(extension.equals("jpg") || extension.equals("gif") || extension.equals("jpeg") || extension.equals("png")){
-						//is not parsable
+					if(Arrays.asList(extensions).contains(extension)){
+						Dumpster.DOWNLOADS.add(link);
 					}else{
 						Main.URLS.add(link);
 					}
 
 				}
 				
-				Elements paragraph_elements = doc.select("p");
+				/*Elements paragraph_elements = doc.select("p");
 				for(Element element : paragraph_elements){
 				String text = element.text().replaceAll("['|(|)|{|}|´|\"]", "").toLowerCase();
 				String[] words = text.split(" ");
@@ -157,7 +159,7 @@ public class Parser {
 			}
 
 				Main.URLS.remove(url);
-				Main.VISITED_URLS.add(url);
+				Main.VISITED_URLS.add(url);*/
 
 			}
 		}).start();
@@ -165,21 +167,7 @@ public class Parser {
 
 
 
-	public static String getDomainName(String url){
-		URI uri;
-		String domain = "";
-		try {
-			uri = new URI(url);
-			domain = uri.getHost();
-			return domain.startsWith("www.") ? domain.substring(4) : domain;
-		} catch (URISyntaxException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-		return domain;
-
-	}
+	
 
 
 	

@@ -17,7 +17,7 @@ public class Main{
 	
 
 	public static void main(String[] args){
-		URLS.add("http://www.asp.net/");
+		URLS.add("http://www.gotene.se/index.html");
 		new Main();
 		new Dumpster();
 	}

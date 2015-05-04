@@ -1,0 +1,55 @@
+/*SÖK*/
+
+.topmenu .sv-searchform-portlet {
+   position: relative;
+   background: #fff;
+   border: 1px solid #ccc;
+   text-align: left;
+   -webkit-border-radius: 10px;
+   border-radius: 5px;
+   padding: 1px 2px;
+}
+
+.topmenu .sv-searchform-portlet input {
+  font-size:100%;
+}
+.topmenu .sv-searchform-portlet input[type="text"] {
+   border: 0 none;
+   padding: 4px 7px;
+   vertical-align: middle;
+   width: 70% !important;
+   background-color:#F2F2F2;
+   color: black;
+   font-style:italic;
+   -webkit-border-radius: 0;
+   border-radius: 0;
+   line-height:23px;
+   height:21px;
+}
+.topmenu .sv-searchform-portlet input[type="text"]:focus {
+   background-color:#eef6df;
+}
+.topmenu ::-webkit-input-placeholder { /* WebKit browsers */
+    color:    #000;
+}
+.topmenu :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color:    #000;
+}
+.topmenu ::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color:    #000;
+}
+.topmenu :-ms-input-placeholder { /* Internet Explorer 10+ */
+    color:    #000;
+}
+.topmenu .sv-searchform-portlet input[type="submit"] {
+   position: absolute;
+   right:5px;
+   top:1px;
+   padding: 4px;
+   background: none transparent;
+   border: 0 none;
+   color: black;
+   filter: none;
+   line-height: 23px;
+}
+

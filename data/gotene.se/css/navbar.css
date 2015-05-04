@@ -1,0 +1,154 @@
+
+
+.navbar
+{
+    margin-bottom: 0px !important;
+}
+
+.navbar-inner
+{
+    padding: 0px;
+    background-color: none;
+    background-image: none;
+    background-repeat: none;
+    border: none;
+    border-radius: none;
+    box-shadow: none;
+    min-height: inherit;
+}
+
+.navbar .nav
+{
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+}
+
+.navbar li
+{
+    width: 12.5%;
+    text-align: center;
+}
+
+.navbar-three li
+{
+    width: 33% !important;
+}
+
+.navbar-three a
+{
+    background-color: #660000 !important;
+}
+
+.navbar-three .noborder .toppnavigering
+{
+    background-image: none;
+    background-color: #660000 !important;
+}
+
+.navbar-three
+{
+   background-color: #660000 !important;
+}
+
+.navbar ul
+{
+    background-color: #404040 !important;
+}
+
+.navbar-three ul
+{
+    background-color: #660000 !important;
+}
+
+.container 
+{
+    background-color: #404040 !important;
+}
+
+.navbar .nav > li > a
+{
+    height: 34px;
+    padding: 8px 0 8px 0;
+    text-decoration: none;
+    text-shadow: none;
+    color: #fff;
+    background: url("/images/18.1bf6334f141eada898fd03f/1385036803021/1pxwhite.png") repeat-y scroll right top #404040;
+}
+
+.navbar .nav .noborder a
+{
+    background-image: none;
+    background-color: #404040 !important;
+}
+
+.navbar-three .nav .noborder a
+{
+   background-color: #660000 !important;
+}
+
+/* Focus */
+.navbar .nav > li > a:focus, .navbar .nav > li > a:hover
+{
+    background-color: #535452;
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Active */
+.navbar .active
+{
+    background-color: #fff !important;
+    color: #000 !important;
+}
+
+.navbar .nav > .active > a, .navbar .nav > .active > a:hover, .navbar .nav > .active > a:focus
+{
+    background-color: #600;
+    box-shadow: none;
+    color: #fff;
+}
+
+
+/* Collapse */
+.collapse li a
+{
+    font-weight: normal !important;
+}
+
+.collapse br
+{
+    display: none !important;
+}
+
+.in li
+{
+    text-align: left;
+    width: 100%;
+}
+
+.in li a
+{
+   height: auto !important;
+   padding-left: 8px !important;
+    background: url("/images/18.21054bbe13bb92a64dbe4e/1356800667012/1pxwhite.png") repeat-x scroll center top #666666 !important;
+}
+
+.navbar-inner {
+    background-color: #666666;
+}
+
+.navbar .btn-navbar {
+   background-color: #666666;
+   background-image: linear-gradient(to bottom, #666666, #E5E5E5);
+   margin-bottom: 3px;
+}
+
+#navbar-title-custom
+{
+	display: none;
+	float:left;
+	padding: 10px 0 0 5px;
+	font-size:130%;
+   color: #fff !important;
+}

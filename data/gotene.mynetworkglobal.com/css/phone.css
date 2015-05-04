@@ -1,0 +1,750 @@
+/**
+ * Target: Smallest phones < 480px
+ */
+
+body {
+    font-size: 0.95em;
+    margin-top: 0px;
+    background-color: #fff;
+    background: none;
+    padding: 0px 0.5em;
+}
+
+button, input, select, textarea {
+    font-size: 0.5em;
+}
+
+
+
+.mainButtonWrap {
+    width: 90%;
+/*    float: left;*/
+}
+
+.mainButtonWrap a.button{
+    background-color:lightskyblue;
+    padding: 1% 1% 1% 1%;
+}
+
+.companyInformation {
+    display:none;
+}
+
+.topBannerText {
+    display: none;
+}
+
+div.wait-box {
+    width: 100%;
+    height: 15%;
+/*    top: 35%;
+    left: 5%;*/
+}
+
+.textLabelReg {
+    width: 100%;
+    font-size: 0.8em;
+}
+
+.textLabelReg a{
+    font-size: 1em;
+}
+
+div.mainContainer {
+    width: 100%;
+    text-align: left;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+div.topContainer {
+    width: 100%;
+    text-align: left;
+}
+
+div.heightContainer {
+    height: 100%;
+    float: left;
+}
+
+.otherLinks {
+    padding: 1%;
+    background: #eee;
+    color: #444;
+    width: 100%;
+    margin-left: -1%;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    border: solid 1px #ddd;
+    text-shadow: 0 -1px 0 rgba(150, 150, 150, 0.5);
+    -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(130, 130, 130, 0.2);
+    -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(130, 130, 130, 0.2);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(130, 130, 130, 0.2);
+    -webkit-transition-duration: 0.2s;
+    -moz-transition-duration: 0.2s;
+    transition-duration: 0.2s;
+    white-space: nowrap;
+    display: block;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+}
+
+.informationDiv {
+    border: 0;
+    width: 85%;
+    font-size: 0.9em;
+    margin-bottom: 1%;
+    margin-right: auto;
+    margin-left: auto;
+    background: #bde1ef;
+    color: black;
+    -moz-border-radius: 0;
+    -webkit-border-radius: 0;
+    -khtml-border-radius: 0;
+    -o-border-radius: 0;
+    border-radius: 0;
+}
+
+.informationDiv a {
+    font-size: 0.9em;
+}
+.loginArea {
+/*    position: relative;*/
+    width: 94%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.loginArea p {
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.loginArea a {
+    font-size: 1em;
+}
+
+.loginArea label {
+    display: block;
+    color: #666;
+    letter-spacing: 1px;
+    font-size: 1em;
+}
+
+.loginArea input {
+    padding-top: 3%;
+    padding-bottom: 3%;
+    padding-left: 3.2%;
+    margin-left: -2.2%;
+    background: #f8f8f8;
+    color: #555;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 1%;
+    margin-bottom: 4%;
+    font-size: 1em;
+    border-width: 1px;
+
+}
+
+.loginArea a.loginBtn {
+    padding: 2% 3%;
+    background: #eee;
+    color: #444;
+    width: 100%;
+
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    border: solid 1px #ddd;
+    text-shadow: 0 -1px 0 rgba(150, 150, 150, 0.5);
+    -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(130, 130, 130, 0.2);
+    -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(130, 130, 130, 0.2);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(130, 130, 130, 0.2);
+    -webkit-transition-duration: 0.2s;
+    -moz-transition-duration: 0.2s;
+    transition-duration: 0.2s;
+    -webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
+    text-decoration: none;
+    white-space:nowrap;
+    display: block;
+    display: inline-block;
+    text-align: center;
+}
+
+.otherLogin {
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+}
+
+.otherLogin img {
+    width: 38%;
+}
+
+.otherLogin a {
+    text-decoration: none;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.loginArea a.bottomButtons {
+    padding: 10px 15px;
+    background: #eee;
+    color: #444;
+    width: 89.8%;
+    margin-left: -2.6%;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    border: solid 1px #ddd;
+    text-shadow: 0 -1px 0 rgba(150, 150, 150, 0.5);
+    -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(130, 130, 130, 0.2);
+    -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(130, 130, 130, 0.2);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(130, 130, 130, 0.2);
+    -webkit-transition-duration: 0.2s;
+    -moz-transition-duration: 0.2s;
+    transition-duration: 0.2s;
+    -webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
+    text-decoration: none;
+    white-space:nowrap;
+    display: block;
+    display: inline-block;
+    text-align: center;
+    font-size: 1em;
+}
+
+#loginForm {
+    width: 100%;
+}
+
+.forgotPass {
+    float: none;
+}
+
+.alternativeLoginText {
+    font-size: 0.9em;
+    margin-bottom: 2%;
+}
+
+.headerBig {
+    font-family: Verdana, Arial, Helvetica;
+    font-size: 1.40em;
+    font-weight: bold;
+    text-decoration: none;
+    margin-top: 3%;
+    margin-bottom: 3%;
+    margin-left: auto;
+    margin-right: auto;
+    width: 96%;
+}
+
+div.jobContainer {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: Verdana;
+}
+
+/*  #companyJobList is the company-name.mynetworkglobal.com */
+
+#companyJobList_default{ /* Remove all these from all child-elements */
+    color: #000000;
+    font-family: Verdana,Arial,Helvetica;
+}
+#companyJobList_default img{
+    border:none;
+}
+
+#companyJobList_default .bottomNavLinks{
+    margin-top: 10%;
+}
+
+#companyJobList_default table {
+    width: 100%;
+    border: none;
+    border-collapse: collapse;
+    border-spacing: 0px;
+}
+
+
+#companyJobList_default tr.oddRow{
+    background-color: #eee;
+    /*border-bottom: 1px solid #000; */
+}
+#companyJobList_default tr.evenRow{
+    background-color: #fff;
+}
+
+
+#companyJobList_default #wait-box-container{
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+#companyJobList_default a.button,
+#companyJobList_default input[type="submit"].button,
+#companyJobList_default input[type="button"].button{
+    padding: 1%;
+    font-size: 0.9em;
+    background: #eee;
+    color: #444;
+    width: 100%;
+    margin-left: -1%;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    border: solid 1px #ddd;
+    text-shadow: 0 -1px 0 rgba(150, 150, 150, 0.5);
+    -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(130, 130, 130, 0.2);
+    -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(130, 130, 130, 0.2);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(130, 130, 130, 0.2);
+    -webkit-transition-duration: 0.2s;
+    -moz-transition-duration: 0.2s;
+    transition-duration: 0.2s;
+    -webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
+    text-decoration: none;
+    white-space:nowrap;
+    display: block;
+    display: inline-block;
+    text-align: center;
+
+}
+#companyJobList_default a.button:hover,
+#companyJobList_default input[type="submit"].button:hover,
+#companyJobList_default input[type="button"].button:hover{
+    background: #ddd;
+    border: solid 1px #ccc;
+    text-decoration: none;
+}
+#companyJobList_default a.button:active,
+#companyJobList_default input[type="submit"].button:active,
+#companyJobList_default input[type="button"].button:active {
+    -webkit-box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.6);
+    -moz-box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.6);
+    box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.6);
+    background: #ddd;
+    border: solid 1px #ccc;
+}
+
+
+#companyJobList div.topContainer{
+    max-width: 100%;
+}
+
+
+#companyJobList_default div.mainContainer {
+    max-width: 100%;
+    min-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#companyJobList .adAndSideWrap {
+    min-width: 10%;
+}
+
+#companyJobList_default #logoHolder {
+    margin-bottom: 2%;
+}
+
+#companyJobList_default #logoHolder img {
+    max-width: 100%;
+}
+
+#companyJobList_default div.langFlagHolder {
+    text-align: right;
+    margin-top: 1%;
+}
+
+#companyJobList_default div.langFlagHolder > a{
+    opacity: 0.3;
+    padding-left: 1.2%;
+}
+#companyJobList_default div.langFlagHolder > a:hover{
+    opacity: 1.0;
+    /* -webkit-transition-duration: 0.3s;
+    -moz-transition-duration: 0.3s;
+     transition-duration: 0.3s; */
+}
+
+#companyJobList_default div.langFlagHolder  img{
+    width: 15%;
+}
+
+#companyJobList_default .textLabel, #companyJobList_default .textContent {
+    float: none;
+}
+
+
+#companyJobList_default .textLabel, #companyJobList_default .textContent {
+    float: none;
+}
+
+
+
+#companyJobList_default .textLabel, #companyJobList_default .textContent {
+    float: none;
+
+}
+
+
+#companyJobList_default .jobRow a, #companyJobList_default .jobRowSp a, #companyJobList_default .jobRow a{
+    display: block;
+    text-decoration: none;
+    padding: 0.4em 0em;
+}
+
+
+
+#companyJobList_default #frmEraseSubscriptions label, #companyJobList_default #subscribeForm label, #findJobForm label{
+    display: inline-block;
+    font-size: 0.8em;
+    width: 100%;
+    white-space: nowrap;
+}
+#companyJobList_default #findJobForm input,
+#companyJobList_default #findJobForm select,
+#companyJobList_default #frmEraseSubscriptions input,
+#companyJobList_default #frmEraseSubscriptions select,
+#companyJobList_default #subscribeForm select,
+#companyJobList_default #subscribeForm input{
+    width: 100%;
+}
+
+#companyJobList_default #frmEraseSubscriptions input[type="submit"],
+#companyJobList_default #subscribeForm input[type="submit"]{
+    width: 100%;
+}
+#companyJobList_default #findJobForm input[type="button"]{
+    width: 100%;
+}
+
+#companyJobList_default #findJobForm label.frmerror,
+#companyJobList_default #frmEraseSubscriptions label.frmerror,
+#companyJobList_default #subscribeForm label.frmerror{
+    color: #B00;
+}
+#companyJobList_default #findJobForm label.frmerror:before,
+#companyJobList_default #frmEraseSubscriptions label.frmerror:before,
+#companyJobList_default #subscribeForm label.frmerror:before{
+    content: "* ";
+}
+
+/* coremodule changepassword */
+
+.cleanMain {
+   min-height: 0;
+   max-width: 480px;
+   margin-left: auto;
+   margin-right: auto;
+   background-color: white;
+}
+
+.main-center-body {
+    width: 100%;
+    float: left;
+    background: none;
+}
+
+.main-center-admin{
+    margin-top: 0px;
+    width: 100%;
+}
+
+.main-center-body-admin {
+    margin-top: 0px;
+    width: 100%;
+    float: left;
+}
+
+.main-center {
+    background-image: none;
+    width: 100%;
+    box-shadow: 0;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    -o-box-shadow: none;
+    margin-left: auto;
+    margin-right: auto;
+    border: 0;
+}
+
+.main-footer {
+    width: 100%;
+}
+
+div.subpage {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    margin-top: 0;
+    max-height: 20%;
+    min-height: 0;
+}
+
+.subpage-menu-col {
+    width: 100%;
+}
+
+.subpage-cont-col {
+    width: 100%;
+}
+
+.interestFormArea {
+    width: 100%;
+}
+
+.interestFormInput {
+    width: 100%;
+}
+
+.newPasswordInput {
+    width: 95%;
+    padding: 2%;
+    font-size: 1.1em;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 3%;
+}
+.changePasswordMain {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+div.noTabPage {
+    margin-top: -0px !important;
+    padding-top: 5%;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+div.extra-logo {
+    width: 0;
+    height: 0;
+    background: none;
+}
+
+div.footer-info {
+    display:none;
+}
+
+div.message-box {
+    font-family: verdana, arial, helvetica, sans-serif;
+    font-size: 10px;
+    position: absolute;
+    display: none;
+    background: white;
+    margin-left: 0;
+    margin-right: auto;
+    margin-top: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    z-index: 525;
+    width: 0;
+    height: 100%;
+    -moz-border-radius: 0;
+    -webkit-border-radius: 0;
+    -khtml-border-radius: 0;
+    -o-border-radius: 0;
+    border-radius: 0;
+    box-shadow:none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    -moz-border-radius: 0;
+}
+
+.requestPasswordSubmit {
+    background: #eee;
+    color: #444;
+    padding: 3%;
+    font-size: 1em;
+    letter-spacing: 1px;
+    color: #121212;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 10%;
+    width: 100%;
+    text-align: center;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    border: solid 1px #ddd;
+    text-shadow: 0 -1px 0 rgba(150, 150, 150, 0.5);
+    -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(130, 130, 130, 0.2);
+    -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(130, 130, 130, 0.2);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(130, 130, 130, 0.2);
+    -webkit-transition-duration: 0.2s;
+    -moz-transition-duration: 0.2s;
+    transition-duration: 0.2s;
+    -webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
+    text-decoration: none;    
+}
+
+.backButton {
+    background: #eee;
+    color: #444;
+    padding: 3%;
+    margin-top: 10%;
+    margin-right: auto;
+    margin-left: auto;    
+   max-width: 480px;    
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    border: solid 1px #ddd;
+    text-shadow: 0 -1px 0 rgba(150, 150, 150, 0.5);
+    -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(130, 130, 130, 0.2);
+    -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(130, 130, 130, 0.2);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(130, 130, 130, 0.2);
+    -webkit-transition-duration: 0.2s;
+    -moz-transition-duration: 0.2s;
+    transition-duration: 0.2s;
+    -webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
+    text-decoration: none;
+    text-align: center;
+}
+
+.backButton a {
+    font-size: 1em;
+    color: #232323;
+}
+
+/* registration Process */
+.registrationProcessMain {
+    margin-left: 100%;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+.registrationLogout {
+    margin-top: 0;
+}
+
+.registrationLogo {
+    margin-left: 0;
+    padding-top: 1%;
+    margin-bottom: 2%;
+    height: 100%;
+}
+
+.horizontalContainer {
+    display: none;
+}
+
+/* Account registration */
+
+.inputForm {
+    font-family: Verdana, Arial, Helvetica;
+    font-size: 0.8em;
+    color: black;
+    font-style: normal;
+    float: left;
+}
+
+.formStyle {
+    font-family: Verdana, Arial, Helvetica;
+    font-size: 1.2em;
+    color: black;
+    font-style : normal;
+    width: 100%;
+/*    margin-left:auto;
+    margin-right: auto;*/
+    font-style: normal;
+    float: left;
+}
+
+.textLabelReg td {
+    width: 100%;
+}
+
+.textLabelRegWidth {
+    width:100%;
+}
+
+.passwordError {
+    float: left;
+    font-size: 0.8em; 
+    margin-bottom: 5%;
+    margin-top: 1%;
+}
+
+a.registerButton {
+    margin-top: 2%;
+    margin-bottom: 2%;
+    padding: 10px 15px;
+    background: #eee;
+    color: #444;
+    width: 89.8%;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    border: solid 1px #ddd;
+    text-shadow: 0 -1px 0 rgba(150, 150, 150, 0.5);
+    -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(130, 130, 130, 0.2);
+    -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(130, 130, 130, 0.2);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(130, 130, 130, 0.2);
+    -webkit-transition-duration: 0.2s;
+    -moz-transition-duration: 0.2s;
+    transition-duration: 0.2s;
+    -webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
+    text-decoration: none;
+    white-space:nowrap;
+    display: block;
+    display: inline-block;
+    text-align: center;
+    font-size: 1em;
+
+}
+.registerTableMain {
+    width: 100%;
+}
+
+.registerTable {
+    border-spacing: 0;
+    border-collapse: separate;
+}
+
+.registerTable td {
+    padding: 0.5%;
+}
+
+.memberTermsPage {
+    font-family: verdana, arial, helvetica, sans-serif;
+    font-size: 1em;        
+    max-width: 100%;
+    margin-left: 1%;
+    margin-top: 2%;
+}
+
+.memberTermsText {
+    font-size: 0.9em;
+}
+
+.termsBackButton {
+    margin-top: 2%;
+}
