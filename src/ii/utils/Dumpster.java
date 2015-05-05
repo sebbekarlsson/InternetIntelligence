@@ -1,4 +1,6 @@
 package ii.utils;
+import ii.main.Main;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.net.URL;
@@ -24,13 +26,12 @@ public class Dumpster implements Runnable{
 			try {
 				Thread.sleep(10);
 			} catch (InterruptedException e1) {
-				// TODO Auto-generated catch block
 				e1.printStackTrace();
 			}
 			for(int i = 0; i < DOWNLOADS.size(); i++){
 				String url = DOWNLOADS.get(i);
 				DOWNLOADS.remove(i);
-				System.out.println("GET: "+url);
+				// TODO Better than System.out.println("GET: "+url);
 				String filename = FilenameUtils.getName(url);
 				String abspath = FilenameUtils.getPath(filename).toString();
 				
@@ -43,8 +44,9 @@ public class Dumpster implements Runnable{
 				
 				try {
 					FileUtils.copyURLToFile(new URL(url), new File(foldername+"/"+filename));
+					Main.itemsDownloaded++;
 				} catch (FileNotFoundException e) {
-					System.err.println("404: " + url);
+					// TODO Better than System.err.println("404: " + url);
 				} catch (Exception e) {
 					e.printStackTrace();
 				} 

@@ -91,7 +91,7 @@ public class Parser {
 
 				try {
 					if(con.execute().statusCode() != 200){
-						System.err.println("Could not reach "+url);
+						//System.err.println("Could not reach "+url);
 						return;
 					}
 					doc = con.get();
@@ -99,7 +99,7 @@ public class Parser {
 					return;
 				}
 				
-				Elements elements = doc.select("a[href], img[src], link[href], script[src]");
+				Elements elements = doc.select("a[href], img[src], link[href], script[src], source[src]");
 				for (Element element : elements) {
 					String link = element.attr("abs:href");
 					if(link.isEmpty() || link.equals("") || link.equals(" ")){
@@ -117,18 +117,18 @@ public class Parser {
 						return;
 					}
 					if(Arrays.asList(extensions).contains(extension)){
-						
-						Dumpster.DOWNLOADS.add(link);
+						if(Dumpster.DOWNLOADS.size() < Main.DLQLIMIT){
+							Dumpster.DOWNLOADS.add(link);
+						}
 					}else{
 						final String safeurl = link.replaceAll("'", "");
 						if(!Main.sqlite.urlExists(safeurl)){
-							Main.URLS.add(link);
-							//System.out.println("GOTO " + link);
+							if(Main.URLS.size() < Main.PAGEQLIMIT){
+								Main.URLS.add(link);
+							}
 						}
 					}
 				}
-				// Parsed ;)
-				//Main.sqlite.query("INSERT INTO History (url) VALUES ('" + safeurl +"');");
 
 			}
 		}).start();
