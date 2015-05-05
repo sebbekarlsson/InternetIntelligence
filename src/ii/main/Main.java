@@ -17,7 +17,16 @@ public class Main{
 	
 
 	public static void main(String[] args){
-		URLS.add("http://www.gotene.se/index.html");
+		URLS.add("http://gotene.se/index.html");
+		
+		URLS.add("https://news.ycombinator.com/");
+		URLS.add("http://reddit.com/");
+		URLS.add("https://github.com/");
+		URLS.add("http://bralankar.webs.com/");
+		URLS.add("http://www.kreativpedagogik.se/");
+		URLS.add("http://www.lankar.se/");
+		URLS.add("http://www.reddit.com/domain/imgur.com/");
+		
 		new Main();
 		new Dumpster();
 	}
@@ -29,36 +38,37 @@ public class Main{
 			public void run(){
 				while(true){
 					while(URLS.size() > 0){
-						if(threadCount() < 30){
+						
+						if(threadCount() < 60){
 							int urlID = random.nextInt(URLS.size());
 							String url = URLS.get(urlID);
-							while(VISITED_URLS.contains(url)){
+							while(VISITED_URLS.contains(url)) {
 								urlID = random.nextInt(URLS.size());
 								url = URLS.get(urlID);
 							}
 							
-							
-							if(VISITED_URLS.size() >= 10000){
+							if(VISITED_URLS.size() >= 10000) {
 								System.out.println("Dumping history");
 								VISITED_URLS.clear();
 							}
-							
-							Parser.parse(url);
-
+							final String safeurl = url.replaceAll("'", "");
+							if(Main.sqlite.urlExists(safeurl)){
+								continue;
+							}else{
+								Main.sqlite.query("INSERT INTO History (url) VALUES ('" + safeurl +"');");
+								//System.out.println("FOUND: " + url);
+								Parser.parse(url);
+							}
+						}else{
+							try{Thread.sleep(1000);} catch(Exception e){}
 						}
-
 					}
-
+					System.out.println("WAITING FOR URLS");
+					try{Thread.sleep(2000);} catch(Exception e){}
 				}
 			}
 		}).start();
 	}
-
-
-
-
-
-
 
 
 	public static int threadCount(){

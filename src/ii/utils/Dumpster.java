@@ -1,5 +1,6 @@
 package ii.utils;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.net.URL;
 import java.util.ArrayList;
 
@@ -28,8 +29,10 @@ public class Dumpster implements Runnable{
 			}
 			for(int i = 0; i < DOWNLOADS.size(); i++){
 				String url = DOWNLOADS.get(i);
-				System.out.println("DOWNLOADING: "+url);
+				DOWNLOADS.remove(i);
+				System.out.println("GET: "+url);
 				String filename = FilenameUtils.getName(url);
+				String abspath = FilenameUtils.getPath(filename).toString();
 				
 				String foldername = "data/"+DomainUtils.getDomainName(url)+"/"+FilenameUtils.getExtension(filename);
 				File folder = new File(foldername);
@@ -40,11 +43,11 @@ public class Dumpster implements Runnable{
 				
 				try {
 					FileUtils.copyURLToFile(new URL(url), new File(foldername+"/"+filename));
+				} catch (FileNotFoundException e) {
+					System.err.println("404: " + url);
 				} catch (Exception e) {
 					e.printStackTrace();
 				} 
-				DOWNLOADS.remove(i);
-				
 			}
 		}
 	}
